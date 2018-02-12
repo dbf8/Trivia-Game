@@ -3,15 +3,91 @@ html, body  {
 }
 
 body {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 1fr 2fr 100px;
+    grid-template-areas: 
+        "header header"
+        "content score"
+        "footer footer";
+    grid-row-gap: 5px;
     background: black;
     color: white;
     text-align: center;
+    margin: 20px auto;
+    border: solid;
+    border-color: white;
+}
+
+header {
+    border: solid;
+    border-color: white;
+    grid-area: header;
+    padding: 20px;
 }
 
 h1 {
+    padding: 20px;
     font-size: 24pt;
+    border: solid;
+    border-color: white;
 }
 
 h4 {
+    padding: 20px;
+    text-align: center;
+    border: solid;
+    border-color: white;
+}
+
+.game {
+    padding: 10px;
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-areas: "question question"
+    "answer1 answer2"
+    "answer3 answer4"
+}
+
+.question {
+    padding: 10px;
+    border: solid;
+    border-color: white;
+    grid-template-areas: question;
+}
+
+.answers, .answer {
+    padding: 10px;
+    border: solid;
+    border-color: white;
+    }
+    
+.a {
+    padding: 10px;
+    grid-area: answer1;
+}    
+
+.b {
+    padding: 10px;
+    grid-area: answer2;
+}    
+.c {
+    padding: 10px;
+    grid-area: answer3;
+}    
+.d {
+    padding: 10px;
+    grid-area: answer4;
+}    
+.scoretracker {
+    padding: 10px;
+    grid-area: score;
+    height: 400px;
+}
+
+.footer {
+    grid-area: footer;
     text-align: center;
 }

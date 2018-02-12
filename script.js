@@ -1,0 +1,3 @@
+// create 5 divs (1 for question, 1 for each answer... and i'll push into those)
+// create the words to put in divs to put in the score tracker and to highlight the background of as you answer the correct questions....
+// more psudocode goes here!
