@@ -43,15 +43,25 @@ answerC.addEventListener('click', clickyClicky)
 answerD.addEventListener('click', clickyClicky)
 
 function clickyClicky () {
-  if (this.innerHTML === questions[i].answer) { 
-alert('correct')
+  var finalAnswer = confirm('Final Answer?')
+  if (finalAnswer === true) {
+    if (this.innerHTML === questions[i].answer) {
+      alert('correct, onward toward the iPhone')
       i++
       quizStart()
+    } else {
+      alert('YOU LOSE ALL THE MONEY (just kidding, try again)')
     }
-  else {
-      alert('WRONG, RESET PAGE')
-    }
+  }  else {
+    alert('ok, take your time')
+  }
 }
+
+//   else {
+    // alert('ok, try again')
+//   }
+
+// var finalAnswer = confirm('Final Answer?')
 
 // quizStart()
 // clickyClicky () =>
@@ -59,3 +69,11 @@ alert('correct')
 // create event listener
 // create if statement for true or false
 //
+
+// score counter.... div background nonsesnse
+
+// if i get to it:
+// randomizer for answers
+// yes or no prompt
+// a you lose and autorefresh
+// maybe a question randomizer

@@ -58,6 +58,7 @@ header {
     border-color: white;
     /* grid-column: 1 / 3; */
     grid-column: question;
+    text-align: auto;
 }
 
 .answers, .answer {
