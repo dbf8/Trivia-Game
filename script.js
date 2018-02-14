@@ -5,22 +5,29 @@
 // create start button to actually start the game
 //
 
-var mainQuestion = document.querySelector(".question")
-var answerA = document.querySelector(".a")
-var answerB = document.querySelector(".b")
-var answerC = document.querySelector(".c")
-var answerD = document.querySelector(".d")
+const mainQuestion = document.querySelector('.game .question')
+const answerA = document.querySelector('.a')
+const answerB = document.querySelector('.b')
+const answerC = document.querySelector('.c')
+const answerD = document.querySelector('.d')
 
-
-const questions [
-    {
-        question: "1 2 3 4, which number is third?",
-        choices: ["1", "2", "3", "4"],
-        answer: 2
-    },
-    {
-        question: 
-        choices:
-        answer: 
-    }
+var questions = [
+  {
+    question: '1 2 3 4, which number is third?',
+    choices: ['1', '2', '3', '4'],
+    answer: 2
+  },
+  {
+    question: ' ',
+    choices: ['1 ', '2', '3', '4'],
+    answer: 0
+  }
 ]
+
+mainQuestion.addEventListener('click', () => {
+    mainQuestion.innerHTML = 'this test worked'
+})
+
+// create event listener for each answer
+// create submit button
+//
