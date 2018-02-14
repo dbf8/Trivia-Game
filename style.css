@@ -3,19 +3,19 @@ html, body  {
 }
 
 body {
-    font-family: 'Arvo', serif;
-    margin: 25px 10% 0px;
+    font-family: 'Oxygen', sans-serif;
+    margin: 1px 10% 0px;
     background: rgb(41, 38, 38);
     color: white;
     border: 1px, solid;
     border-color: white;    
     display: grid;
-    grid-template-columns: 1fr 200px;
-    grid-template-rows: 115px 2fr 45px;
+    /* grid-template-columns: 1fr 200px; */
+    grid-template-rows: 115px 2fr 40px;
     grid-template-areas: 
-        "header   header"
-        "content   content"
-        "footer   footer";
+        "header"
+        "content"
+        "footer";
     grid-row-gap: 5px;
 }
 
@@ -30,8 +30,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
-    /* float: left; */
 }
 
 .name {
@@ -46,12 +44,12 @@ header {
     grid-area: content;
     display: grid;
     grid-template-columns: 1fr 1fr 200px;
-    grid-template-rows: 300px 200px 200px;
+    grid-template-rows: 225px 145px 145px;
     grid-template-areas: 
     "question   question  score"
     "answer1   answer2   score"
     "answer3   answer4   score";
-    grid-gap: 25px;
+    grid-gap: 10px;
 }
 
 .question {
@@ -63,6 +61,7 @@ header {
 }
 
 .answers, .answer {
+    margin: 5px;
     padding: 20px;
     border: solid;
     border-color: white;
@@ -70,42 +69,53 @@ header {
     }
     
 .a {
-    /* padding: 10px; */
     grid-area: answer1;
 }    
 
 .b {
-    /* padding: 10px; */
     grid-area: answer2;
 }    
 .c {
-    /* padding: 10px; */
     grid-area: answer3;
 }    
 .d {
-    /* padding: 10px; */
     grid-area: answer4;
 }    
 .scoretracker {
-    /* margin: 10px; */
-    padding: 10px;
+    /* padding: 10px; */
     grid-area: score;
-    /* grid-row: 2 / 3; */
-    /* grid-column: 2; */
-    /* height: 400px; */
-    border: solid;
-    border-color: white;
+    align-content: center;
+    /* border: solid; */
+    /* border-color: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 23pt;
+    /* justify-content: center; */
+}
 
+.money {
+    background: white;
+    color: black;
+    width: 94px;
+    margin: 1px 53px 1px;
+    text-align: right;
+    /* border: solid; */
+    /* border-color: white; */
+}
+
+.cents {
+    font-size: 9pt;
 }
 
 footer {
-    font-size: 15pt;
+    font-size: 9pt;
     grid-area: footer;
     padding: 10px;
     background-color: blue;
 }
 
-#myname {
+#line {
     float: left;
 }
 
