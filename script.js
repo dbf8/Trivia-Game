@@ -11,18 +11,78 @@ const answerB = document.querySelector('.b')
 const answerC = document.querySelector('.c')
 const answerD = document.querySelector('.d')
 let i = 0
-// let someVar = ''
 
 var questions = [
-  {
-    question: '1 2 3 4, which number is third?',
-    choices: ['1', '2', '3', '4'],
-    answer: '3'
+  {question: `In the 'Road Runner and Coyote' cartoons, what famous sound does the Road Runner make?`,
+    choices: ['Ping! Ping!', 'Beep! Beep!', 'Aooga! Aooga!', 'Vroom! Vroom!'],
+    answer: 'Beep! Beep!'
   },
   {
-    question: 'which number is second, 1234 ',
-    choices: ['4 ', '2', '3', '1'],
-    answer: '2'
+    question: 'Where should choking victims place their hands to indicate to others that they need help?',
+    choices: ['Over the eyes', 'On the knees', 'Around the throat', 'On the hips?'],
+    answer: 'Around the throat'
+  },
+  {
+    question: 'Which of these dance names is used to describe a fashionable dot?',
+    choices: ['Hora', 'Swing', 'Lambada', 'Polka'],
+    answer: 'Polka'
+  },
+  {
+    question: `In what 'language' would you say 'ello-hay' to greet your friends?`,
+    choices: ['Bull Latin', 'Dog Latin','Duck Latin','Pig Latin?'],
+    answer: 'Pig Latin'
+  },
+  {
+    question: `What part of a chicken is commonly called the 'drumstick'?`,
+    choices: ['Breast', 'Wing', 'Leg', 'Gizzard'],
+    answer: 'Leg'
+  },
+  {
+    question: `What is the only position on a football team that can be 'sacked'?`,
+    choices: ['Center', 'Wide Receiver', 'Tight End', 'Quarterback'],
+    answer: 'Quarterback'
+  },
+  {
+    question: 'What god of love is often depicted as a chubby winged infant with a bow and arrow?',
+    choices: ['Zeus','Mercury', 'Cupid', 'Poseidon'],
+    answer: 'Cupid'
+  },
+  {
+    question: `What Steven Spielberg film climaxes at a place called Devil's Tower?`,
+    choices: ['E.T.', 'Jurassic Park', 'Raiders of the Lost Ark', 'Close Encounters of the Third Kind'],
+    answer: 'Close Encounters of the Third Kind'
+  },
+  {
+    question: 'In what U.S. town did the famous 1881 shoot-out at the O.K. Corral take place?',
+    choices: ['Laramie', 'Tombstone', 'El Paso', 'Dodge City'],
+    answer: 'Tombstone'
+  },
+  {
+    question: 'Which of the following months has no U.S. federal holiday?',
+    choices: ['August', 'February', 'September', 'November'],
+    answer: 'August'
+  },
+  {
+    question: 'What mythological beast is reborn from its own ashes?',
+    choices: ['Phoenix', 'Minotaur', 'Dragon', 'Superman'],
+    answer: 'Phoenix'
+  }, {
+    question: 'Who developed the first effective vaccine against polio?',
+    choices: ['Albert Sabin', 'Niels Bohr', 'Louis Pasteur', 'Jonas Salk'],
+    answer: 'Jonas Salk'
+  }, {
+    question: 'Which of the following is not a monotheistic religion?',
+    choices: ['Islam', 'Christianity', 'Hinduism', 'Judaism'],
+    answer: 'Hinduism'
+  }, {
+    question: 'What architect designed the glass pyramid in the courtyard of the Louvre?',
+    choices: ['Phillip Johnson', 'Le Corbusier', 'Frank Gehry', 'I.M. Pei'],
+    answer: 'I.M. Pei'
+  },
+  {
+    question: 'Which of these U.S. Presidents appeared on the television series "Laugh-In"?',
+    choices: ['Lyndon Johnson', 'Richard Nixon', 'Jimmy Carter', 'Gerald Ford'],
+    answer: 'Richard Nixon'
   }
 ]
 
@@ -30,6 +90,8 @@ document.addEventListener('keypress', quizStart)
 
 function quizStart () {
   mainQuestion.innerHTML = questions[i].question
+  // shuffle array!!!
+  shuffle(questions[i].choices)
   answerA.innerHTML = questions[i].choices[0]
   answerB.innerHTML = questions[i].choices[1]
   answerC.innerHTML = questions[i].choices[2]
@@ -52,7 +114,7 @@ function clickyClicky () {
     } else {
       alert('YOU LOSE ALL THE MONEY (just kidding, try again)')
     }
-  }  else {
+  } else {
     alert('ok, take your time')
   }
 }
@@ -77,3 +139,28 @@ function clickyClicky () {
 // yes or no prompt
 // a you lose and autorefresh
 // maybe a question randomizer
+
+// I know you guys told us to never copy and paste but I copied and pasted the below this from the internet as a test
+
+function shuffle (randomized) {
+  let ctr = randomized.length
+  let temp
+  let index
+
+    // While there are elements in the array
+  while (ctr > 0) {
+// Pick a random index
+    index = Math.floor(Math.random() * ctr)
+// Decrease ctr by 1
+    ctr--
+// And swap the last element with it
+    temp = randomized[ctr]
+    randomized[ctr] = randomized[index]
+    randomized[index] = temp
+  }
+  return randomized
+}
+
+// shuffle(questions[i].choices)
+
+// console.log(shuffle(questions[1].question.choices))
