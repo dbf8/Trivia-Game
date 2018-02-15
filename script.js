@@ -190,7 +190,7 @@ function shuffle (randomized) {
 
 // )
 
-function highlightwinner () {
-  var winner = document.querySelector('.1000')
-  winner.classList.add('highlight')
-}
+// function highlightwinner () {
+//   var winner = document.querySelector('.1000')
+//   winner.classList.add('highlight')
+// }
