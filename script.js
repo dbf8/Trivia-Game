@@ -102,6 +102,8 @@ function clickyClicky () {
   var finalAnswer = confirm('Final Answer?')
   if (finalAnswer === true) {
     if ((this.innerHTML === questions[i].answer) && (i >= (questions.length - 1))) {
+      i++
+      scoreboard ()
       alert('YOU WIN $1000 FOR AN IPHONE X, GO TO IT')
       window.location.href = 'https://www.apple.com/iphone-x/'
     } else if (this.innerHTML === questions[i].answer) {
