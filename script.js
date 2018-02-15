@@ -1,10 +1,3 @@
-// create 5 divs (1 for question, 1 for each answer... and i'll push into those)
-// create the words to put in divs to put in the score tracker and to highlight the background of as you answer the correct questions....
-// more psudocode goes here!
-
-// create start button to actually start the game
-//
-
 const mainQuestion = document.querySelector('.game .question')
 const answerA = document.querySelector('.a')
 const answerB = document.querySelector('.b')
@@ -90,10 +83,9 @@ var questions = [
 document.addEventListener('keypress', quizStart, {once: true})
 // in case no keypress exists
 document.addEventListener('click', quizStart, {once: true})
-
+//startquiz
 function quizStart () {
   mainQuestion.innerHTML = questions[i].question
-  // shuffle array!!!
   shuffle(questions[i].choices)
   answerA.innerHTML = questions[i].choices[0]
   answerB.innerHTML = questions[i].choices[1]
@@ -101,12 +93,11 @@ function quizStart () {
   answerD.innerHTML = questions[i].choices[3]
 }
 
-  // create event listener for each answer
 answerA.addEventListener('click', clickyClicky)
 answerB.addEventListener('click', clickyClicky)
 answerC.addEventListener('click', clickyClicky)
 answerD.addEventListener('click', clickyClicky)
-
+//checkonclick
 function clickyClicky () {
   var finalAnswer = confirm('Final Answer?')
   if (finalAnswer === true) {
@@ -114,7 +105,6 @@ function clickyClicky () {
       alert('YOU WIN $1000 FOR AN IPHONE X, GO TO IT')
       window.location.href = 'https://www.apple.com/iphone-x/'
     } else if (this.innerHTML === questions[i].answer) {
-      // I'd like to delay this alert and change the color of the button to green on the correct, then turn back, but not totally necessary
       i++
       scoreboard ()
       alert('Correct, onward toward the iPhone')
@@ -141,37 +131,8 @@ function shuffle (randomized) {
   }
   return randomized
 }
-// cutting room floor
 
-// creating the div's for the answers to not displ
-// create a 50/50, ask the audience, and "phone a friend"
-
-// attempt at a hint (would give direction on clicking the button for this):
-// mainQuestion.addEventListener('click', () => {
-  // window.open('http://lmgtfy.com/?q=' + *here i need to take the question above and add +'s inbetween all the words)
-// }
-
-// )
-
-// function highlightwinner () {
-//   var winner = document.querySelector('.1000')
-//   winner.classList.add('highlight')
-// }
-
-/*
-1. some way of knowing the score for the game and
-how that correlates to what should be highlighted
-2. some way of identifying each .money div by the
-ammount it represents (maybe a data-* attributte?)
-3. get the list of .money divs loop through
-4. if the value (perhaps stored in the data-* attribute)
-is less than the score and how it correlates to the $$,
-add the .highlight class to that .money div
-
-bonus:
-querySelector('.money.highlight)
-get the previousElementSibling and add a .highlight class to it
-*/
+// scoreboard highlighting
 function scoreboard () {
   const ten = document.querySelector('.ten')
   const twenty = document.querySelector('.twenty')
