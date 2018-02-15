@@ -72,6 +72,7 @@ header {
 header, .question, .answer {
     background-color: rgba(41, 38, 38, 0.5);
     border-radius: 25px;
+    text-align: center;
 }
 
 .answer {

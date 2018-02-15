@@ -86,7 +86,10 @@ var questions = [
   }
 ]
 
+//gamestart
 document.addEventListener('keypress', quizStart)
+//in case no keypress exists:
+document.addEventListener('click', quizStart)
 
 function quizStart () {
   mainQuestion.innerHTML = questions[i].question
