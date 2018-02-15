@@ -88,6 +88,12 @@ header, .question, .answer {
     }
 
 .answer:hover {
+    background: rgba(255, 198, 41, 0.75);
+    border: solid;
+    border-color: orange;
+}
+
+.answer:active {
     background: rgba(62, 139, 62, 0.75);
     border: solid;
     border-color: green;
@@ -150,3 +156,10 @@ footer {
     float: right;
 }
 
+.highlight {
+    font-weight: bold;
+    background-color: rgba(255, 255, 0, 0.9);
+    border: solid;
+    border-color: yellow;
+    color: green;
+}

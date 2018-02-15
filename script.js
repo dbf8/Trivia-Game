@@ -19,7 +19,7 @@ var questions = [
   },
   {
     question: 'Where should choking victims place their hands to indicate to others that they need help?',
-    choices: ['Over the eyes', 'On the knees', 'Around the throat', 'On the hips?'],
+    choices: ['Over the eyes', 'On the knees', 'Around the throat', 'On the hips'],
     answer: 'Around the throat'
   },
   {
@@ -86,14 +86,15 @@ var questions = [
   }
 ]
 
-//gamestart
-document.addEventListener('keypress', quizStart)
-//in case no keypress exists:
-document.addEventListener('click', quizStart)
+// gamestart
+document.addEventListener('keypress', quizStart, {once : true})
+// in case no keypress exists
+document.addEventListener('click', quizStart, {once : true})
 
 function quizStart () {
   mainQuestion.innerHTML = questions[i].question
   // shuffle array!!!
+  // currently on shuffle array when you answer a question wrong, it will shuffle the answers again...
   shuffle(questions[i].choices)
   answerA.innerHTML = questions[i].choices[0]
   answerB.innerHTML = questions[i].choices[1]
@@ -111,10 +112,12 @@ function clickyClicky () {
   var finalAnswer = confirm('Final Answer?')
   if (finalAnswer === true) {
     if ((this.innerHTML === questions[i].answer) && (i >= (questions.length - 1))) {
+// add highlight winner function here?
       alert('YOU WIN $1000 FOR AN IPHONE X, GO TO IT')
       window.location.href = 'https://www.apple.com/iphone-x/'
     } else if (this.innerHTML === questions[i].answer) {
-      alert('correct, onward toward the iPhone')
+      // I'd like to delay this alert and change the color of the button to green on the correct, then turn back, but not totally necessary
+      alert('Correct, onward toward the iPhone')
       i++
       quizStart()
     } else {
@@ -175,3 +178,19 @@ function shuffle (randomized) {
 //   if (i <= questions.length === true) {
 //     window.location.href = 'http://www.apple.com/'
 // }
+
+// creating the div's for the answers to not displ
+// create a 50/50, ask the audience, and "phone a friend"
+//
+
+// attempt at a hint (would give direction on clicking the button for this):
+// mainQuestion.addEventListener('click', () => {
+  // window.open('http://lmgtfy.com/?q=' + *here i need to take the question above and add +'s inbetween all the words)
+// }
+
+// )
+
+function highlightwinner () {
+  var winner = document.querySelector('.1000')
+  winner.classList.add('highlight')
+}
