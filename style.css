@@ -158,9 +158,9 @@ footer {
 
 .highlight {
     font-weight: bold;
-    background-color: rgba(255, 255, 0, 0.9);
+    background-color: rgba(0, 81, 255, 0.9);
     border: solid;
-    border-color: yellow;
-    color: green;
+    border-color: rgb(0, 82, 255);
+    color: white;
     box-shadow: 1px;
 }

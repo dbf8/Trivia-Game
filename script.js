@@ -94,7 +94,6 @@ document.addEventListener('click', quizStart, {once: true})
 function quizStart () {
   mainQuestion.innerHTML = questions[i].question
   // shuffle array!!!
-  // currently on shuffle array when you answer a question wrong, it will shuffle the answers again...
   shuffle(questions[i].choices)
   answerA.innerHTML = questions[i].choices[0]
   answerB.innerHTML = questions[i].choices[1]
@@ -112,13 +111,13 @@ function clickyClicky () {
   var finalAnswer = confirm('Final Answer?')
   if (finalAnswer === true) {
     if ((this.innerHTML === questions[i].answer) && (i >= (questions.length - 1))) {
-// add highlight winner function here?
       alert('YOU WIN $1000 FOR AN IPHONE X, GO TO IT')
       window.location.href = 'https://www.apple.com/iphone-x/'
     } else if (this.innerHTML === questions[i].answer) {
       // I'd like to delay this alert and change the color of the button to green on the correct, then turn back, but not totally necessary
-      alert('Correct, onward toward the iPhone')
       i++
+      scoreboard ()
+      alert('Correct, onward toward the iPhone')
       quizStart()
     } else {
       alert('YOU LOSE ALL THE MONEY (just kidding, try again)')
@@ -128,43 +127,20 @@ function clickyClicky () {
   }
 }
 
-// create event listener
-// create if statement for true or false
-//
-
-// score counter.... div background nonsesnse
-
-// if i get to it:
-// randomizer for answers
-// yes or no prompt
-// a you lose and autorefresh
-// maybe a question randomizer
-
-// I know you guys told us to never copy and paste but I copied and pasted the below this from the internet as a test
-
+// Used the https://www.w3resource.com/javascript-exercises/javascript-array-exercise-17.php as a guide
 function shuffle (randomized) {
   let ctr = randomized.length
   let temp
   let index
-
-    // While there are elements in the array
   while (ctr > 0) {
-// Pick a random index
     index = Math.floor(Math.random() * ctr)
-// Decrease ctr by 1
     ctr--
-// And swap the last element with it
     temp = randomized[ctr]
     randomized[ctr] = randomized[index]
     randomized[index] = temp
   }
   return randomized
 }
-
-// shuffle(questions[i].choices)
-
-// console.log(shuffle(questions[1].question.choices))
-
 // cutting room floor
 
 // creating the div's for the answers to not displ
@@ -181,3 +157,80 @@ function shuffle (randomized) {
 //   var winner = document.querySelector('.1000')
 //   winner.classList.add('highlight')
 // }
+
+/*
+1. some way of knowing the score for the game and
+how that correlates to what should be highlighted
+2. some way of identifying each .money div by the
+ammount it represents (maybe a data-* attributte?)
+3. get the list of .money divs loop through
+4. if the value (perhaps stored in the data-* attribute)
+is less than the score and how it correlates to the $$,
+add the .highlight class to that .money div
+
+bonus:
+querySelector('.money.highlight)
+get the previousElementSibling and add a .highlight class to it
+*/
+function scoreboard () {
+  const ten = document.querySelector('.ten')
+  const twenty = document.querySelector('.twenty')
+  const thirty = document.querySelector('.thirty')
+  const fifty = document.querySelector('.fifty')
+  const one = document.querySelector('.one')
+  const two = document.querySelector('.two')
+  const four = document.querySelector('.four')
+  const eight = document.querySelector('.eight')
+  const sixteen = document.querySelector('.sixteen')
+  const thirtytwo = document.querySelector('.thirtytwo')
+  const sixtyfour = document.querySelector('.sixtyfour')
+  const onetwentyfive = document.querySelector('.onetwentyfive')
+  const twofifty = document.querySelector('.twofifty')
+  const fivehundred = document.querySelector('.fivehundred')
+  const onethousand = document.querySelector('.onethousand')
+  if (i > 14) {
+    onethousand.classList.add('highlight')
+  }
+  else if (i > 13) {
+    fivehundred.classList.add('highlight')
+  }
+  else if (i > 12) {
+    twofifty.classList.add('highlight')
+  }
+  else if (i > 11) {
+    onetwentyfive.classList.add('highlight')
+  }
+  else if (i > 10) {
+    sixtyfour.classList.add('highlight')
+  }
+  else if (i > 9) {
+    thirtytwo.classList.add('highlight')
+  }
+  else if (i > 8) {
+    sixteen.classList.add('highlight')
+  }
+  else if (i > 7) {
+    eight.classList.add('highlight')
+  }
+  else if (i > 6) {
+    four.classList.add('highlight')
+  }
+  else if (i > 5) {
+    two.classList.add('highlight')
+  }
+  else if (i > 4) {
+    one.classList.add('highlight')
+  }
+  else if (i > 3) {
+    fifty.classList.add('highlight')
+  }
+  else if (i > 2) {
+    thirty.classList.add('highlight')
+  }
+  else if (i > 1) {
+    twenty.classList.add('highlight')
+  }
+  else if (i > 0) {
+    ten.classList.add('highlight')
+  }
+}
