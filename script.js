@@ -29,7 +29,7 @@ var questions = [
   },
   {
     question: `In what 'language' would you say 'ello-hay' to greet your friends?`,
-    choices: ['Bull Latin', 'Dog Latin','Duck Latin','Pig Latin?'],
+    choices: ['Bull Latin', 'Dog Latin', 'Duck Latin', 'Pig Latin'],
     answer: 'Pig Latin'
   },
   {
@@ -44,7 +44,7 @@ var questions = [
   },
   {
     question: 'What god of love is often depicted as a chubby winged infant with a bow and arrow?',
-    choices: ['Zeus','Mercury', 'Cupid', 'Poseidon'],
+    choices: ['Zeus', 'Mercury', 'Cupid', 'Poseidon'],
     answer: 'Cupid'
   },
   {
@@ -107,7 +107,10 @@ answerD.addEventListener('click', clickyClicky)
 function clickyClicky () {
   var finalAnswer = confirm('Final Answer?')
   if (finalAnswer === true) {
-    if (this.innerHTML === questions[i].answer) {
+    if ((this.innerHTML === questions[i].answer) && (i >= (questions.length - 1))) {
+      alert('YOU WIN $1000 FOR AN IPHONE X, GO TO IT')
+      window.location.href = 'https://www.apple.com/iphone-x/'
+    } else if (this.innerHTML === questions[i].answer) {
       alert('correct, onward toward the iPhone')
       i++
       quizStart()
@@ -164,3 +167,8 @@ function shuffle (randomized) {
 // shuffle(questions[i].choices)
 
 // console.log(shuffle(questions[1].question.choices))
+
+// cutting room floor
+//   if (i <= questions.length === true) {
+//     window.location.href = 'http://www.apple.com/'
+// }
