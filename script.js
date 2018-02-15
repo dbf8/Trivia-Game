@@ -87,9 +87,9 @@ var questions = [
 ]
 
 // gamestart
-document.addEventListener('keypress', quizStart, {once : true})
+document.addEventListener('keypress', quizStart, {once: true})
 // in case no keypress exists
-document.addEventListener('click', quizStart, {once : true})
+document.addEventListener('click', quizStart, {once: true})
 
 function quizStart () {
   mainQuestion.innerHTML = questions[i].question
@@ -127,15 +127,6 @@ function clickyClicky () {
     alert('ok, take your time')
   }
 }
-
-//   else {
-    // alert('ok, try again')
-//   }
-
-// var finalAnswer = confirm('Final Answer?')
-
-// quizStart()
-// clickyClicky () =>
 
 // create event listener
 // create if statement for true or false
@@ -175,13 +166,9 @@ function shuffle (randomized) {
 // console.log(shuffle(questions[1].question.choices))
 
 // cutting room floor
-//   if (i <= questions.length === true) {
-//     window.location.href = 'http://www.apple.com/'
-// }
 
 // creating the div's for the answers to not displ
 // create a 50/50, ask the audience, and "phone a friend"
-//
 
 // attempt at a hint (would give direction on clicking the button for this):
 // mainQuestion.addEventListener('click', () => {
