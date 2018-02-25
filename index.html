@@ -9,13 +9,14 @@
     <title>Who Wants to be… able to afford an iPhone X?</title>
 </head>
 <body>
-    <header>
-        <div class = "name"> Who Wants to be… able to afford an iPhone X?</div>
+    <header> <!-- Good use of header/footer for semantic sections -->
+        <div class = "name"> Who Wants to be… able to afford an iPhone X?</div> <!-- Maybe `title` might be a better class name? -->
         <div class = "subheader">(Yes that’s a <i>Who Wants to be a Millionaire</i> Reference)</div>
     </header>
     <div class = "game">
         <div class = "question">Press Any Key</div>
-        <!-- might be fun to have ABCD display maybe do that if I have time -->
+        <!-- might be fun to have ABCD display maybe do that if I have time --> 
+        <!-- Take comments like this out of production code -->
         <div class = "answer a"></div>
         <div class = "answer b"></div>
         <div class = "answer c"></div>
@@ -36,8 +37,9 @@
             <div class="money cents thirty">$.30  </div>
             <div class="money cents twenty">$.20  </div>
             <div class="money cents ten">$.10  </div>
-    </div>
-    </div>
+            <!-- Good use of multiple class names for efficient styling -->
+            </div>
+        </div>
     <footer>
         <div id = "line">No actual money is won in this game. No animals were harmed in the creation of these questions except maybe the cat that keeps biting me. Questions borrowed from Who Wants to Be a Millionaire</div>
         <div id = "year">- Daniel Freudberg 2018</div>
@@ -45,3 +47,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- html well structured overall. Here are a few suggestions -->
+<!-- I wouldnt make everything a div. Try more semantic tags like h1, p, etc. The questions money divs should probably be list items -->
+<!-- Usually no spaces between equals sign in html => <div class="name"> -->
