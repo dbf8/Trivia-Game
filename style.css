@@ -1,25 +1,27 @@
 html, body  {
     min-height: 100%;
     cursor: pointer;
+    /* I might not have the curser as `pointer` for the whole document. Maybe just where you can click. */
 }
 
 body {
     font-family: 'Oxygen', sans-serif;
     margin: 1px 10% 0px;
     /* background: rgb(41, 38, 38); */
+    /* Take commented out code out of production branches! */
     background: #061d30;
     background-image: url(millionaire01.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: fixed;
+    background-size: 100%; /* Here you run into an issue with resizing the page.  Try `background-size: cover` instead */
+    background-position: fixed; /* This isn't a valid property https://developer.mozilla.org/en-US/docs/Web/CSS/background-position */
     /* background: rgb(41, 38, 38); */
     color: white;
-    border: 1px, solid;
+    border: 1px, solid; /* This should be `border: 1px solid` */
     border-color: white;    
-    display: grid;
+    display: grid; /* Nice use of grid! */
     /* grid-template-columns: 1fr 200px; */
-    grid-template-rows: 115px 2fr 40px;
-    grid-template-areas: 
+    grid-template-rows: 115px 2fr 40px; /* Nice use of fr for flexible sizing */
+    grid-template-areas: /* This is cool! I need to mess around with this grid syntax more */
         "header"
         "content"
         "footer";
@@ -52,10 +54,10 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 200px;
     grid-template-rows: 225px 145px 145px;
-    grid-template-areas: 
-    "question   question  score"
-    "answer1   answer2   score"
-    "answer3   answer4   score";
+    grid-template-areas: /* Cool way to structure your page! Grids within grids, I like it */
+        "question   question  score"
+        "answer1   answer2   score"
+        "answer3   answer4   score";
     grid-gap: 10px;
 }
 
@@ -86,7 +88,7 @@ header, .question, .answer {
     display: flex;
     align-items: center;
     justify-content: center;
-    }
+}
 
 .answer:hover {
     background: rgba(255, 198, 41, 0.75);
@@ -106,15 +108,19 @@ header, .question, .answer {
 
 .b {
     grid-area: answer2;
-}    
+}   
+
 .c {
     grid-area: answer3;
 }    
+
 .d {
     grid-area: answer4;
-}    
+}  
+
 .scoretracker {
     /* padding: 10px; */
+    /* No commented out code! */
     grid-area: score;
     align-content: center;
     /* border: solid; */
@@ -127,7 +133,7 @@ header, .question, .answer {
 }
 
 .money {
-    background: rgba(250, 250, 250, 0.5);
+    background: rgba(250, 250, 250, 0.5); /* Nice use of opacity! */
     color: black;
     width: 94px;
     margin: 1px 53px 1px;
@@ -150,7 +156,7 @@ footer {
 }
 
 #line {
-    float: left;
+    float: left; /* Try this with flex */
 }
 
 #year {
@@ -165,3 +171,8 @@ footer {
     color: white;
     /* box-shadow: 1px; */
 }
+
+/* Nice job with the css. Seems like you have a good grasp on grid and flex. */
+/* Next I'd look into making your page more responsive. Checkout `media queries` */
+/* Try to make your page adjust even better for small viewports or when the screen is adjusted. */
+/* Also, take out the commented out code! */

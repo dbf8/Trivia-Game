@@ -4,9 +4,11 @@ const answerB = document.querySelector('.b')
 const answerC = document.querySelector('.c')
 const answerD = document.querySelector('.d')
 let i = 0
+// Nice job having your global variables at the top
 
 var questions = [
-  {question: `In the 'Road Runner and Coyote' cartoons, what famous sound does the Road Runner make?`,
+  {
+    question: `In the 'Road Runner and Coyote' cartoons, what famous sound does the Road Runner make?`,
     choices: ['Ping! Ping!', 'Beep! Beep!', 'Aooga! Aooga!', 'Vroom! Vroom!'],
     answer: 'Beep! Beep!'
   },
@@ -78,8 +80,9 @@ var questions = [
     answer: 'Richard Nixon'
   }
 ]
+// Would be nice to have these questions in a separate js file so they dont' clutter up the main functionality.
 
-// gamestart
+// gamestart - I like the comments you added to help make the code more readable. Could make them even more clear, `This starts game initially` or something
 document.addEventListener('keypress', quizStart, {once: true})
 // in case no keypress exists
 document.addEventListener('click', quizStart, {once: true})
@@ -98,7 +101,7 @@ answerB.addEventListener('click', clickyClicky)
 answerC.addEventListener('click', clickyClicky)
 answerD.addEventListener('click', clickyClicky)
 //checkonclick
-function clickyClicky () {
+function clickyClicky () { // I don't know about this function name... but to each their own
   var finalAnswer = confirm('Final Answer?')
   if (finalAnswer === true) {
     if ((this.innerHTML === questions[i].answer) && (i >= (questions.length - 1))) {
@@ -136,7 +139,7 @@ function shuffle (randomized) {
 
 // scoreboard highlighting
 function scoreboard () {
-  const ten = document.querySelector('.ten')
+  const ten = document.querySelector('.ten') 
   const twenty = document.querySelector('.twenty')
   const thirty = document.querySelector('.thirty')
   const fifty = document.querySelector('.fifty')
@@ -151,6 +154,7 @@ function scoreboard () {
   const twofifty = document.querySelector('.twofifty')
   const fivehundred = document.querySelector('.fivehundred')
   const onethousand = document.querySelector('.onethousand')
+  // You may want to put all these constants at the top of your file so you don't have to keep reassigning them every time scoreboard() is called
   if (i > 14) {
     onethousand.classList.add('highlight')
   }
@@ -195,5 +199,10 @@ function scoreboard () {
   }
   else if (i > 0) {
     ten.classList.add('highlight')
-  }
+  } // It's arguable that a switch statement might be better suited for this, but the way you did it is fine too.  
 }
+
+// Good job overall here. Your functions are well defined and for the most part do one job. 
+// You made good use of the functional programming paradigm and control flow. 
+// Your app works great, no major bugs with the functionality. 
+// Gave a few suggestions above about how you could clean it up even more.
